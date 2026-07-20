@@ -1,0 +1,24 @@
+# ===========================
+# Harbor Official Package
+# ===========================
+third_party/harbor/
+
+# Harbor Runtime Data
+infra/docker/volumes/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# Environment
+.env.local
