@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: robot-simulator
+  labels:
+    app: robot-simulator
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: robot-simulator
+
+  template:
+    metadata:
+      labels:
+        app: robot-simulator
+
+    spec:
+      containers:
+        - name: robot-simulator
+          image: robot-simulator:v1
+          imagePullPolicy: Never
+
+          ports:
+            - name: http
+              containerPort: 80
+
+          resources:
+            requests:
+              cpu: 50m
+              memory: 32Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
